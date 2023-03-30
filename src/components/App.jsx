@@ -65,8 +65,8 @@ export class App extends Component {
 
   componentDidMount() {
     const localPhonelist = localStorage.getItem('phoneList');
-    // const parsePhonelist = JSON.parse(localPhonelist);
-    if (JSON.parse(localPhonelist)) {
+    const parsePhonelist = JSON.parse(localPhonelist);
+    if (parsePhonelist) {
       this.setState({ phoneList: parsePhonelist });
     }
   }

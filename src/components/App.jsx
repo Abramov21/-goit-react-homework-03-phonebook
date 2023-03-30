@@ -18,21 +18,6 @@ export class App extends Component {
     filter: '',
   };
 
-  componentDidMount() {
-    const localPhonelist = localStorage.getItem('phoneList');
-    const parsePhonelist = JSON.parse(localPhonelist);
-    if (parsePhonelist) {
-      this.setState({ phoneList: parsePhonelist });
-    }
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    // console.log(prevState);
-    if (this.state.phoneList !== prevState.phoneList) {
-      localStorage.setItem('phoneList', JSON.stringify(this.state.phoneList));
-    }
-  }
-
   handleFormSubmit = ({ name, number }) => {
     const { phoneList } = this.state;
 
@@ -77,6 +62,21 @@ export class App extends Component {
       item.name.toLowerCase().includes(filter.toLowerCase())
     );
   };
+
+  componentDidMount() {
+    const localPhonelist = localStorage.getItem('phoneList');
+    // const parsePhonelist = JSON.parse(localPhonelist);
+    if (JSON.parse(localPhonelist)) {
+      this.setState({ phoneList: parsePhonelist });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // console.log(prevState);
+    if (this.state.phoneList !== prevState.phoneList) {
+      localStorage.setItem('phoneList', JSON.stringify(this.state.phoneList));
+    }
+  }
 
   render() {
     const { filter } = this.state;

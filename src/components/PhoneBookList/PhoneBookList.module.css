@@ -1,22 +1,35 @@
 .contactList {
-  width: 500px;
+    display: flex;
+    flex-wrap
+    : wrap;
+    justify-content: center;
+  width: 450px;
   list-style: none;
-  padding: 15px;
+  padding: 0px;
   margin: 0 auto 0 auto;
+  padding-left: 0;
   /* margin-left: auto;
   margin-right: auto; */
 }
 
 .item{
-    width: 450px;
+    width: 400px;
     height: 40px;
     display:inline-flex;
     align-items: center;
-    /* justify-content: center; */
-
+    justify-content: center;
+    border: 2px  solid blue;
+    border-radius: 15px;
     padding: 10px 10px;
+    margin-bottom: 10px;
+    /* padding-right: auto;
+    padding-left: auto; */
 }
 
+.item:first-child{
+    margin-top: 10px;
+
+}
 .itemBtn {
     display: block;
     height: 30px;
